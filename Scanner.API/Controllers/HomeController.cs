@@ -4,7 +4,9 @@ using System.Diagnostics;
 
 namespace Scanner.API.Controllers
 {
-    public class HomeController : Controller
+    [ApiController]
+    [Route("api/Home")]
+    public class HomeController : ControllerBase
     {
         private readonly ILogger<HomeController> _logger;
 
@@ -13,20 +15,12 @@ namespace Scanner.API.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+        [HttpGet]
+        [Route("Index")]
+        public string Index()
         {
-            return View();
+            return "fdfsd";
         }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
     }
 }
