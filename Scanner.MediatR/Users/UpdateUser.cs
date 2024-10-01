@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace Scanner.MediatR.Users
 {
-    public class AddUser
+    public class UpdateUser
     {
         public class Request : IRequest<string>
         {
         }
-        public class Handler : IRequestHandler<Request , string>
+        public class Handler : IRequestHandler<Request, string>
         {
             public Handler()
             {
@@ -20,7 +20,7 @@ namespace Scanner.MediatR.Users
 
             public Task<string> Handle(Request request, CancellationToken cancellationToken)
             {
-                return Task.FromResult("Please add user first");
+                return Task.FromResult(" Update User ");
             }
         }
     }
