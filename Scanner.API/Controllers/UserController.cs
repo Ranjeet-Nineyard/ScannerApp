@@ -6,11 +6,11 @@ namespace Scanner.API.Controllers
 {
     [ApiController]
     [Route("api/Home")]
-    public class HomeController : ControllerBase
+    public class UserController : ControllerBase
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly ILogger<UserController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        public UserController(ILogger<UserController> logger)
         {
             _logger = logger;
         }
