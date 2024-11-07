@@ -1,6 +1,7 @@
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Scanner.API.Models;
+using Scanner.Data.Model;
 using Scanner.MediatR.Users;
 using System.Diagnostics;
 
@@ -20,8 +21,8 @@ namespace Scanner.API.Controllers
         }
 
         [HttpGet]
-        [Route("AddUser")]
-        public Task<string> AddUser() => mediat.Send(new AddUser.Request());
+        [Route("Register")]
+        public Task<Response<bool>> Register([FromBody] Register.Request r) => mediat.Send(r);
 
 
         [HttpGet]
